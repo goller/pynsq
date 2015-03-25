@@ -316,7 +316,7 @@ class AsyncConn(event.EventedMixin):
     def send_rdy(self, value):
         try:
             self.send(protocol.ready(value))
-        except Exception, e:
+        except Exception as e:
             self.close()
             self.trigger(
                 event.ERROR,
